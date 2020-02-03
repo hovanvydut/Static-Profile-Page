@@ -67,11 +67,16 @@ window.addEventListener("resize", () => {
         document.getElementById("fullsite").style.transform = "none";
         mobileMenu.style.left = "0";
         sidebar.style.left = "-220px";
+        if (document.documentElement.offsetWidth <= 768) {
+            Array.from(
+                document.getElementsByClassName("timeline-item")
+            ).forEach(elm => (elm.style.transform = "none"));
+        }
     }
 
-    const cover = Array.from(document.getElementsByClassName('cover'));
-    cover.forEach(elm => elm.style.display = 'none');
-    
+    const cover = Array.from(document.getElementsByClassName("cover"));
+    cover.forEach(elm => (elm.style.display = "none"));
+
     smoothScrollPage();
 });
 
